@@ -9,7 +9,7 @@ public class EmailSorter {
 
     public static void main(String[] args) {
         // Sample input
-        String input1 = "alice@google.com,bob@instagram.com,charlie@tap.com";
+        String input1 = "alice@google.com,bob@instag.com,charlie@tap.com";
         String input2 = "david@medium.com,emma@short.com,frank@longestdomainname.com";
         
         // Sort and print the output for the first sample input
@@ -28,7 +28,7 @@ public class EmailSorter {
         // Sort the emails based on the specified criteria
         emails.sort(Comparator
             .comparingInt((String email) -> email.split("@")[1].length()) // 1. Length of domain
-            .thenComparingInt(email -> email.split("@")[0].length())      // 2. Length of username
+            .thenComparingInt(email -> email.split("@")[0].length())     // 2. Length of username
             .thenComparing(email -> email.split("@")[1])                  // 3. Alphabetical order of domain
             .thenComparing(email -> email.split("@")[0])                  // 4. Alphabetical order of username
         );

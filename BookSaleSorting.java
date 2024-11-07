@@ -107,33 +107,33 @@ public class BookSaleSorting {
 		
 		int criteria = sc.nextInt();
 		
-		switch (criteria) {
-		case 1: {
-			Collections.sort(list, Comparator.comparingInt(Book::getPrice));
-			break;
-		}
+//		switch (criteria) {
+//		case 1: {
+//			Collections.sort(list, Comparator.comparingInt(Book::getPrice));
+//			break;
+//		}
+//		
+//		case 2: {
+//			Collections.sort(list, Comparator.comparingDouble(Book::getRating).reversed());
+//			break;
+//		}
+//		
+//		case 3: {
+//			Collections.sort(list, Comparator.comparing(Book::getAuthor));
+//			break;
+//		}
+//		
+//		case 4: {
+//			Collections.sort(list, Comparator.comparingInt(Book::getDiscount).reversed());
+//			break;
+//		}
+//					
+//	}
 		
-		case 2: {
-			Collections.sort(list, Comparator.comparingDouble(Book::getRating).reversed());
-			break;
-		}
-		
-		case 3: {
-			Collections.sort(list, Comparator.comparing(Book::getAuthor));
-			break;
-		}
-		
-		case 4: {
-			Collections.sort(list, Comparator.comparingInt(Book::getDiscount).reversed());
-			break;
-		}
-					
-	}
-		
-//		Collections.sort(list, Comparator.comparingInt(Book::getPrice)
-//				.thenComparingDouble(Book::getRating)
-//				.thenComparing(Book::getAuthor).reversed()
-//				.thenComparingInt(Book::getDiscount).reversed());
+		Collections.sort(list, Comparator.comparingInt(Book::getPrice)
+				.thenComparingDouble(Book::getRating)
+				.thenComparing(Comparator.comparing(Book::getAuthor).reversed())
+				.thenComparingInt(Book::getDiscount).reversed());
 		
 		for(Book b : list)
 		{
