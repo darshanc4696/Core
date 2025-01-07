@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Bob1 {
     public static int solve(int n, int[] memberId, int m, int[][] friends) {
-        // Step 1: Create a graph representation using an adjacency list
+        // Step 1: Create a graph representation using an adjacency list.
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for (int id : memberId) {
             graph.put(id, new ArrayList<>());
