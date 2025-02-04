@@ -67,11 +67,12 @@ package corejava;
 
 class Fun
 {
-	final int a = 10;
+	
+	double a = (Math.round(Math.random()*6)+1);
 }
 
 public class Practice {
-    public static void main(String[] args)
+    void main(String[] args)
     {
     	Fun f = new Fun();
     	System.out.println(f.a);
